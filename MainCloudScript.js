@@ -80,7 +80,7 @@ handlers.enemyLooted = function (args, context) {
         
         var GrantItemsToUserRequest = {
        		"PlayFabId" : currentPlayerId,
-       		"ItemIds" : ["DogFang"],
+       		"ItemIds" : ["OutPostDog"],
        		"Annotaion" : "Granted Item for killing" + monsterKilled
        		};
        		
