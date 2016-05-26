@@ -61,6 +61,7 @@ handlers.enemyKilled = function (args, context) {
     var skillPoints = args.skillPointsAmount;
     
     if (monsterKilled == "testing") {
+        log.debug("worked");
         server.AddUserVirtualCurrency( {
             PlayFabId: currentPlayerId,
             VirtualCurrency: SP,
