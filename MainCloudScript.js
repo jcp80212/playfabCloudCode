@@ -54,3 +54,19 @@ handlers.helloWorld = function (args, context) {
     // (https://api.playfab.com/playstream/docs/PlayStreamEventModels/player/player_executed_cloudscript)
     return { messageValue: message };
 }
+//used to handle when a player kills something in the game.
+handlers.enemyKilled = function (args, context) {
+    var monsterKilled = args.monsterKilled;
+    var expAmount = args.expAmount;
+    var skillPoints = args.skillPointsAmount;
+    
+    if (monsterKilled == "testing") {
+        server.AddUserVirtualCurrency( {
+            PlayFabId: currentPlayerId,
+            VirtualCurrency: SP,
+            Amount: skillPoints
+        });
+        
+    }
+}
+
