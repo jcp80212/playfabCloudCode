@@ -85,6 +85,17 @@ handlers.enemyLooted = function (args, context) {
        		};
        		
        	var GrantItemsToUserResult = server.GrantItemsToUser(GrantItemsToUserRequest);
+       	var item = GrantItemsToUserResult[0];
+       	var itemID = item.ItemInstanceId;
+       	
+       	var ConsumeItemRequest = {
+       		"PlayFabId" : currentPlayerId,
+       		"ItemInstanceId" : itemID,
+       		"ConsumeCount" : 1
+       	};
+       	
+       	var ConsumeItemResult = server.ConsumeItem(ConsumeItemRequest);
+       	
        	log.debug("worked");
        	
         
