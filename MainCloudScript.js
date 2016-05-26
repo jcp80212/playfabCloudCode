@@ -73,3 +73,21 @@ handlers.enemyKilled = function (args, context) {
     }
 }
 
+handlers.enemyLooted = function (args, context) {
+    var monsterKilled = args.monsterKilled;
+    
+    if (monsterKilled == "testing") {
+        
+        var GrantItemsToUserRequest = {
+       		"PlayFabId" : currentPlayerId,
+       		"ItemIds" : ["DogFang"],
+       		"Annotaion" : "Granted Item for killing" + monsterKilled
+       		};
+       		
+       	var GrantItemsToUserResult = server.GrantItemsToUser(GrantItemsToUserRequest);
+       	log.debug("worked");
+       	
+        
+    }
+}
+
