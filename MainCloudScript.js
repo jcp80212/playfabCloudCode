@@ -62,11 +62,13 @@ handlers.enemyKilled = function (args, context) {
     
     if (monsterKilled == "testing") {
         log.debug("worked");
-        server.AddUserVirtualCurrency( {
-            PlayFabId: currentPlayerId,
-            VirtualCurrency: SP,
-            Amount: skillPoints
-        });
+        
+        var AddUserVirtualCurrencyRequest = {
+	    "PlayFabId" : currentPlayerId,
+	    "VirtualCurrency": "SP",
+	    "Amount": skillPoints
+    };
+    var AddUserVirtualCurrencyResult = server.AddUserVirtualCurrency(AddUserVirtualCurrencyRequest);
         
     }
 }
