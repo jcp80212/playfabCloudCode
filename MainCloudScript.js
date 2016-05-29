@@ -102,3 +102,22 @@ handlers.enemyLooted = function (args, context) {
     }
 }
 
+handlers.itemUpdate = function (args, context) {
+    var ItemInstanceId = args.ItemInstanceId;
+    var Data = args.Data;
+    var UpdateUserInventoryItemCustomDataRequest = {
+       		"PlayFabId" : currentPlayerId,
+       		"ItemInstanceId" : ItemInstanceId,
+       		"Data" : Data
+       		};
+       		
+       	var UpdateUserInventoryItemCustomDataResult = server.UpdateUserInventoryItemCustomData(UpdateUserInventoryItemCustomDataRequest);
+       	var item = GrantItemsToUserResult[0];
+       	var itemID = item.ItemInstanceId;
+       	
+       	log.debug("worked");
+       	
+        
+    }
+}
+
