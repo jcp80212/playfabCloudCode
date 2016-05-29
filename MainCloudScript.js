@@ -112,8 +112,6 @@ handlers.itemUpdate = function (args, context) {
        		};
        		
        	var UpdateUserInventoryItemCustomDataResult = server.UpdateUserInventoryItemCustomData(UpdateUserInventoryItemCustomDataRequest);
-       	var item = GrantItemsToUserResult[0];
-       	var itemID = item.ItemInstanceId;
        	
        	log.debug("worked");
        	
