@@ -121,21 +121,19 @@ handlers.GetSlotNumber = function (args)
 {
     var itemInstance = "";
     var slotNumber = "";
-    var playfabId = "";
     
     itemInstance = args.ItemInstance;
     slotNumber = args.SlotNumber;
-    playfabId = args.PlayFabId;
     
     var dataPayload = {};
-    var keyString = "SlotNumber";
+    var keyString = "Level";
     dataPayload[keyString] = slotNumber;
     
     var itemCustomData = server.UpdateUserInventoryItemCustomData(
     {
-        PlayFabId : playfabId,
+        PlayFabId : currentPlayerId,
         ItemInstanceId : itemInstance,
-        Data : { "SlotNumber" : slotNumber }
+        Data : { "Level" : slotNumber }
     });
     return itemCustomData;
 }
