@@ -110,10 +110,9 @@ handlers.itemUpdate = function (args, context) {
        		"ItemInstanceId" : ItemInstanceId,
        		"Data" : Data
        		};
-       		
+       	log.debug("worked");	
        	var UpdateUserInventoryItemCustomDataResult = server.UpdateUserInventoryItemCustomData(UpdateUserInventoryItemCustomDataRequest);
        	
-       	log.debug("worked");
        	
         
     }
