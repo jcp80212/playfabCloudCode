@@ -117,24 +117,12 @@ handlers.itemUpdate = function (args, context) {
     }
 }
 
-handlers.GetSlotNumber = function (args)
-{
-    var itemInstance = "";
-    var slotNumber = "";
-    
-    itemInstance = args.ItemInstance;
-    slotNumber = args.SlotNumber;
-    
-    var dataPayload = {};
-    var keyString = "Level";
-    dataPayload[keyString] = slotNumber;
-    log.debug("worked");
-    var itemCustomData = server.UpdateUserInventoryItemCustomData(
-    {
-        PlayFabId : currentPlayerId,
-        ItemInstanceId : itemInstance,
-        Data : { "Level" : slotNumber }
-    });
-    return itemCustomData;
+handlers.UpdateUserInventoryItemCustomData = function(args){
+   var result = server.UpdateUserInventoryItemCustomData({
+      PlayFabId: currentPlayerId,
+      ItemInstanceId: args.ItemInstanceId,
+      Data: args.data
+   });
+   return result;
 }
 
