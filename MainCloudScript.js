@@ -128,7 +128,7 @@ handlers.GetSlotNumber = function (args)
     var dataPayload = {};
     var keyString = "Level";
     dataPayload[keyString] = slotNumber;
-    
+    log.debug("worked");
     var itemCustomData = server.UpdateUserInventoryItemCustomData(
     {
         PlayFabId : currentPlayerId,
