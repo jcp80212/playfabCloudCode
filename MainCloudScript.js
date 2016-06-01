@@ -108,16 +108,5 @@ handlers.itemUpdate = function (args, context) {
       ItemInstanceId: args.ItemInstanceId,
       Data: args.data
    });
-   log.debug("worked");
-}
-
-handlers.UpdateUserInventoryItemCustomData = function(args){
-	log.info(args.data);
-   var result = server.UpdateUserInventoryItemCustomData({
-      PlayFabId: currentPlayerId,
-      ItemInstanceId: args.ItemInstanceId,
-      Data: args.data
-   });
-   return result;
 }
 
